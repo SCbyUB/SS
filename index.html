@@ -21,7 +21,7 @@
       padding: 10px;
       text-align: center;
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
     }
     #navbar a {
       color: white;
@@ -58,47 +58,7 @@
       height: 100%;
       border: none;
     }
-    .fullscreen-icon:before {
-      content: "\26F6";
-    }
-    .exit-fullscreen-icon:before {
-      content: "\2715";
-    }
   </style>
-  <script>
-    function toggleFullscreen() {
-      if (window.innerWidth === screen.width && window.innerHeight === screen.height) {
-        exitFullscreen();
-      } else {
-        enterFullscreen();
-      }
-    }
-
-    function enterFullscreen() {
-      document.documentElement.style.width = "100%";
-      document.documentElement.style.height = "100%";
-      document.documentElement.style.overflow = "hidden";
-      updateFullscreenButton();
-    }
-
-    function exitFullscreen() {
-      document.documentElement.style.width = "";
-      document.documentElement.style.height = "";
-      document.documentElement.style.overflow = "";
-      updateFullscreenButton();
-    }
-
-    function updateFullscreenButton() {
-      var button = document.getElementById('fullscreen-button');
-      if (window.innerWidth === screen.width && window.innerHeight === screen.height) {
-        button.classList.remove('exit-fullscreen-icon');
-        button.classList.add('fullscreen-icon');
-      } else {
-        button.classList.remove('fullscreen-icon');
-        button.classList.add('exit-fullscreen-icon');
-      }
-    }
-  </script>
 </head>
 <body>
   <div id="navbar">
@@ -106,7 +66,6 @@
     <a href="https://scbyub.github.io/sc1-games/">Activities</a>
     <a href="#">Resources</a>
     <a href="https://github.com/SCbyUB">Support</a>
-    <button id="fullscreen-button" onclick="toggleFullscreen()" class="fullscreen-icon"></button>
     <a href="#">Credits</a>
   </div>
   <div id="content">
